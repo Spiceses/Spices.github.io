@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一个自制的简易求导工具">
+<title>Expressivo</title>
+
+<link rel='canonical' href='http://localhost:1313/p/expressivo/'>
+
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="Expressivo">
+<meta property='og:description' content="一个自制的简易求导工具">
+<meta property='og:url' content='http://localhost:1313/p/expressivo/'>
+<meta property='og:site_name' content='Spices'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-04T11:51:53&#43;08:00'/><meta property='article:modified_time' content='2025-03-04T11:51:53&#43;08:00'/><meta property='og:image' content='http://localhost:1313/p/expressivo/complex_facial_expression.jpg' />
+<meta name="twitter:title" content="Expressivo">
+<meta name="twitter:description" content="一个自制的简易求导工具"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/expressivo/complex_facial_expression.jpg' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/%E5%9B%A2%E5%AD%90%E5%A4%A7%E5%AE%B6%E6%97%8F_hu12852035384337297324.png" width="300"
+                            height="299" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Spices</a></h1>
+            <h2 class="site-description">这里Spices的个人博客, 欢迎你的来访</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Spiceses'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#keywords">keywords</a></li>
+    <li><a href="#representing-expressions">Representing Expressions</a>
+      <ol>
+        <li><a href="#equals">equals</a></li>
+      </ol>
+    </li>
+    <li><a href="#parsing-expressions">Parsing Expressions</a></li>
+    <li><a href="#differentiation">Differentiation</a></li>
+    <li><a href="#simplification">Simplification</a></li>
+    <li><a href="#testing">Testing</a></li>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#question">Question</a></li>
+    <li><a href="#references">References</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/expressivo/">
+                <img src="/p/expressivo/complex_facial_expression_hu10441475239210903094.jpg"
+                        srcset="/p/expressivo/complex_facial_expression_hu10441475239210903094.jpg 800w, /p/expressivo/complex_facial_expression_hu9005015037165704197.jpg 1600w"
+                        width="800" 
+                        height="301" 
+                        loading="lazy"
+                        alt="Featured image of post Expressivo" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/recursive-data-type/" >
+                Recursive Data Type
+            </a>
+        
+            <a href="/categories/regular-expression/" >
+                Regular Expression
+            </a>
+        
+            <a href="/categories/java/" >
+                Java
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/expressivo/">Expressivo</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            一个自制的简易求导工具
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 04, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 6 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>如果我们不必每次都手动计算微积分作业的导数，那岂不是美妙极了？要是能把它输入电脑，让电脑替我们完成，那该有多惬意！</p>
+<p>例如，我们可以这样与之互动(&quot;&gt;&ldquo;后为用户输入):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">&gt; x * x * x
+</span></span><span class="line"><span class="cl">x*x*x
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&gt; !simplify <span class="nv">x</span><span class="o">=</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl"><span class="m">8</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&gt; !d/dx
+</span></span><span class="line"><span class="cl"><span class="o">(</span>x*x<span class="o">)</span>*1+<span class="o">(</span>x*1+1*x<span class="o">)</span>*x
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&gt; !simplify <span class="nv">x</span><span class="o">=</span>0.5000
+</span></span><span class="line"><span class="cl">.75
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&gt; x * y
+</span></span><span class="line"><span class="cl">x*y
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&gt; !d/dy
+</span></span><span class="line"><span class="cl">0*y+x*1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="keywords">keywords
+</h2><ul>
+<li>RDT(recursive data type)
+<ul>
+<li>AST(abstract syntax tree)</li>
+</ul>
+</li>
+<li>Regular Expression
+<ul>
+<li>ANTLR(一个解析器生成器)</li>
+</ul>
+</li>
+</ul>
+<p>为了实现这个简易的求导小程序, 我利用AST(abstract syntax tree)来表示一个数学表达式, 并使用ANTLR来根据用户输入生成抽象语法树.</p>
+<h2 id="representing-expressions">Representing Expressions
+</h2><p>首先需要一个表示数学表达式(支持 +, *, 变量)的接口</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * An immutable data type representing a polynomial expression of:
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *   + and *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *   nonnegative integers and floating-point numbers
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *   variables (case-sensitive nonempty strings of letters)
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Expression</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return a parsable representation of this expression, such that
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * for all e:Expression, e.equals(Expression.parse(e.toString())).
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param thatObject any object
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return true if and only if this and thatObject are structurally-equal
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * Expressions, as defined in the PS3 handout.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">thatObject</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return hash code value consistent with the equals() definition of structural
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * equality, such that for all e1,e2:Expression,
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *     e1.equals(e2) implies e1.hashCode() == e2.hashCode()
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hashCode</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>那我们如何设计Expression的具体实现呢, 我觉得先看看一个表达式(54 + (2 + 89))的AST会有所帮助</p>
+<p><img src="/p/expressivo/antlr4_parse_tree.png"
+	width="372"
+	height="406"
+	srcset="/p/expressivo/antlr4_parse_tree_hu1114082023386763686.png 480w, /p/expressivo/antlr4_parse_tree_hu12393863714255551456.png 1024w"
+	loading="lazy"
+	
+		alt="antlr4_parse_tree"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="91"
+		data-flex-basis="219px"
+	
+></p>
+<p>可以看到, 如果我们把每一个数字(叶子节点)看作一个表达式Number, 那么这里的sum就可以看作一个表达式Plus, Plus包含左表达式和右表达式, 类似地, 乘法我们也可以实现一个Multiply类, 同样包含左表达式和右表达式. 那这样我们如何处理运算的优先级呢, 稍后的antlr grammer会解答这个问题</p>
+<h3 id="equals">equals
+</h3>$$
+plus1.equals(plus2) \iff \\ plus1.left.equals(plus2.left) \land plus1.right.equals(plus2.right)
+$$<h2 id="parsing-expressions">Parsing Expressions
+</h2><p>接下来看看如何把用户输入解析为AST, 具体而言, 我们需要实现Expression.parse</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * Parse an expression.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param input expression to parse, as defined in the PS3 handout.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return expression AST for the input
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @throws IllegalArgumentException if the expression is invalid
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Expression</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">input</span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>给定一个字符串 54 + (2 + 89), 如何生成一颗上图那样的树呢, 我们使用antlr来完成.</p>
+<p>如果仅仅只有加法, 我们定义如下语法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">root : sum EOF;
+</span></span><span class="line"><span class="cl">sum : primitive (&#39;+&#39; primitive)*;
+</span></span><span class="line"><span class="cl">primitive : NUMBER | &#39;(&#39; sum &#39;)&#39;;
+</span></span><span class="line"><span class="cl">NUMBER : [0-9]+;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后antlr就会帮我们自动生成词法分析器, 解析器生成一颗抽象语法树, 我们只需要自己编写树遍历器, 在遍历树的同时生成Expression就可以了.</p>
+<p>想要实现乘法和变量, 实际上我们只需要做一点小小的改变</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-antlr" data-lang="antlr"><span class="line"><span class="cl"><span class="nl">root</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nv">sum</span><span class="w"> </span><span class="no">EOF</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">sum</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nv">product</span><span class="w"> </span><span class="o">(</span><span class="s">&#39;+&#39;</span><span class="w"> </span><span class="nv">product</span><span class="o">)*</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">product</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nv">primitive</span><span class="w"> </span><span class="o">(</span><span class="s">&#39;*&#39;</span><span class="w"> </span><span class="nv">primitive</span><span class="o">)*</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">primitive</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="no">NUMBER</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="no">VARIABLE</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s">&#39;(&#39;</span><span class="w"> </span><span class="nv">sum</span><span class="w"> </span><span class="s">&#39;)&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">NUMBER</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="x">0-9</span><span class="p">]</span><span class="o">+</span><span class="w"> </span><span class="o">(</span><span class="s">&#39;.&#39;</span><span class="w"> </span><span class="p">[</span><span class="x">0-9</span><span class="p">]</span><span class="o">+)?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">VARIABLE</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="x">a-zA-Z</span><span class="p">]</span><span class="o">+</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>sum的定义默认帮我们确定了乘法的优先级高于加法, 不得不感慨数学表达式本身这种递归形式的奥妙, 怪不得肖老师要我们去学数论, 群论这些摸不着头脑的东西.</p>
+<h2 id="differentiation">Differentiation
+</h2><p>现在我已经把用户输入变成Expression了, 我要考虑如何对它进行求导操作</p>
+<p>根据软件工程中所学, 我可以通过以下方式实现对递归数据类型的操作的模式</p>
+<ul>
+<li>在抽象数据类型接口中<strong>声明</strong>操作</li>
+<li>在每个具体变体中（递归地）<strong>实现</strong>该操作</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * Differentiate an expression with respect to a variable.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param var the variable to differentiate by, a case-sensitive nonempty string of letters.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return expression&#39;s derivative with respect to variable.  Must be a valid expression equal
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *         to the derivative, but doesn&#39;t need to be in simplest or canonical form.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Expression</span><span class="w"> </span><span class="nf">differentiate</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">var</span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>根据求导公式, 我马上就写出了各个实现的递归定义</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nl">differentiate</span><span class="p">:</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Expression</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="nf">differentiate</span><span class="p">(</span><span class="n">Number</span><span class="p">(</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">double</span><span class="p">),</span><span class="w"> </span><span class="n">var</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Number</span><span class="p">(</span><span class="n">0</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">differentiate</span><span class="p">(</span><span class="n">Variable</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">),</span><span class="w"> </span><span class="n">var</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="err">? </span><span class="n">Number</span><span class="p">(</span><span class="n">1</span><span class="p">),</span><span class="w"> </span><span class="n">Number</span><span class="p">(</span><span class="n">0</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">differentiate</span><span class="p">(</span><span class="n">Plus</span><span class="p">(</span><span class="n">left</span><span class="p">:</span><span class="w"> </span><span class="n">Expression</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">:</span><span class="w"> </span><span class="n">Expression</span><span class="p">),</span><span class="w"> </span><span class="n">var</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Plus</span><span class="p">(</span><span class="n">differentiate</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">var</span><span class="p">),</span><span class="w"> </span><span class="n">differentiate</span><span class="p">(</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">var</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">differentiate</span><span class="p">(</span><span class="n">Multiply</span><span class="p">(</span><span class="n">left</span><span class="p">:</span><span class="w"> </span><span class="n">Expression</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">:</span><span class="w"> </span><span class="n">Expression</span><span class="p">),</span><span class="w"> </span><span class="n">var</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Plus</span><span class="p">(</span><span class="n">Multiply</span><span class="p">(</span><span class="n">differentiate</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">var</span><span class="p">),</span><span class="w"> </span><span class="n">right</span><span class="p">),</span><span class="w"> </span><span class="n">Multiply</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">differentiate</span><span class="p">(</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">var</span><span class="p">)))</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这也再次让我感慨, 原来高中做了那么久的求导题是递归定义的, 我的脑袋竟然在那时候就处理了这么有趣的概念, 好像小镇做题家也没这么一无是处呢.</p>
+<h2 id="simplification">Simplification
+</h2><p>接着是化简, 要求我们给定某些变量的值, 计算表达式的最终值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * Simplify this expression.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param environment maps variables to values.  Variables are required to be case-sensitive nonempty
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *         strings of letters.  The set of variables in environment is allowed to be different than the
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *         set of variables actually found in expression.  Values must be nonnegative numbers.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return an expression equal to the input, but after substituting every variable v that appears in both
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *         the expression and the environment with its value, environment.get(v).  If there are no
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *         variables left in this expression after substitution, it must be evaluated to a single number.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *         Additional simplifications to the expression may be done at the implementor&#39;s discretion.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @throws IllegalArgumentException if the expression is invalid
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Expression</span><span class="w"> </span><span class="nf">simplify</span><span class="p">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">environment</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>同样, 各个实现的递归定义如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nl">simplify</span><span class="p">:</span><span class="w"> </span><span class="n">Expression</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Expression</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="nf">simplify</span><span class="p">(</span><span class="n">Number</span><span class="p">(</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">double</span><span class="p">),</span><span class="w"> </span><span class="n">environment</span><span class="p">:</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Number</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">simplify</span><span class="p">(</span><span class="n">Variable</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">),</span><span class="w"> </span><span class="n">environment</span><span class="p">:</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">environment</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Variable</span><span class="p">(</span><span class="n">name</span><span class="p">),</span><span class="w"> </span><span class="n">Number</span><span class="p">(</span><span class="n">environment</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">simplify</span><span class="p">(</span><span class="n">Plus</span><span class="p">(</span><span class="n">left</span><span class="p">:</span><span class="w"> </span><span class="n">Expression</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">:</span><span class="w"> </span><span class="n">Expression</span><span class="p">),</span><span class="w"> </span><span class="n">environment</span><span class="p">:</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Plus</span><span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="na">simplify</span><span class="p">(</span><span class="n">environment</span><span class="p">),</span><span class="w"> </span><span class="n">right</span><span class="p">.</span><span class="na">simplify</span><span class="p">(</span><span class="n">environment</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">simplify</span><span class="p">(</span><span class="n">Multiply</span><span class="p">(</span><span class="n">left</span><span class="p">:</span><span class="w"> </span><span class="n">Expression</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">:</span><span class="w"> </span><span class="n">Expression</span><span class="p">),</span><span class="w"> </span><span class="n">environment</span><span class="p">:</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">Double</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Multiply</span><span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="na">simplify</span><span class="p">(</span><span class="n">environment</span><span class="p">),</span><span class="w"> </span><span class="n">right</span><span class="p">.</span><span class="na">simplify</span><span class="p">(</span><span class="n">environment</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里产生了一个<a class="link" href="#Q2" >疑问</a>, 对于如何化简繁琐的表达式, 我摸不着头脑.</p>
+<p>与此同时, 起初尝试实现时, 在Plus的实现中我无法判断left/right expression化简后是否包含变量, 如果包含变量, 我就无需处理, 如果不包含, 我则需要计算它们加起来的值, 再返回, 我迫切地想使用instanceof</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">Expression</span><span class="w"> </span><span class="nf">simplify</span><span class="p">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">environment</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 递归简化左右子表达式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Expression</span><span class="w"> </span><span class="n">simplifiedLeft</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="p">.</span><span class="na">simplify</span><span class="p">(</span><span class="n">environment</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Expression</span><span class="w"> </span><span class="n">simplifiedRight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">right</span><span class="p">.</span><span class="na">simplify</span><span class="p">(</span><span class="n">environment</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 如果左右子表达式都是 Number，则直接计算结果并返回一个新的 Number</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">simplifiedLeft</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Number</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">simplifiedRight</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">Number</span><span class="p">)</span><span class="w"> </span><span class="n">simplifiedLeft</span><span class="p">).</span><span class="na">getValue</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="n">Number</span><span class="p">)</span><span class="w"> </span><span class="n">simplifiedRight</span><span class="p">).</span><span class="na">getValue</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Number</span><span class="p">(</span><span class="n">value</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 如果其中一个子表达式是 0，则返回另一个子表达式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">simplifiedLeft</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Number</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">((</span><span class="n">Number</span><span class="p">)</span><span class="w"> </span><span class="n">simplifiedLeft</span><span class="p">).</span><span class="na">getValue</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">simplifiedRight</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">simplifiedRight</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Number</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">((</span><span class="n">Number</span><span class="p">)</span><span class="w"> </span><span class="n">simplifiedRight</span><span class="p">).</span><span class="na">getValue</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">simplifiedLeft</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 如果无法进一步简化，则返回当前 Plus 表达式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Plus</span><span class="p">(</span><span class="n">simplifiedLeft</span><span class="p">,</span><span class="w"> </span><span class="n">simplifiedRight</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>但是立刻, 我想起来在学习递归数据类型时书上的<a class="link" href="https://web.mit.edu/6.102/www/sp24/classes/11-recursive-data-types/#@instanceof_operator_tests"  target="_blank" rel="noopener"
+    >提醒</a>, 当我在equals以外的地方想用intanceof时, 不妨退一步想想, 我到底需要什么操作. 最后得出的结论是, 我实际上需要知道Expr的值(无论是否有变量), 并不关系expr是否是Number, 所以我在接口中添加了一个method</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 计算当前表达式的值
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return 表达式的值, 如果有未知变量则为Optional.empty()
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">result</span><span class="p">();</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>顺便还用了用最近在<a class="link" href="https://web.stanford.edu/class/archive/cs/cs106l/cs106l.1254/lectures/2025Winter-14-Optional&amp;TypeSafety.pdf"  target="_blank" rel="noopener"
+    >C++</a>中学的Option, 尝试避免成为<a class="link" href="https://medium.com/madhash/how-null-references-became-the-billion-dollar-mistake-bcf0c0cc72ef"  target="_blank" rel="noopener"
+    >10亿美元错误</a>的一部分</p>
+<h2 id="testing">Testing
+</h2><p>测试方面, 遵循<a class="link" href="https://web.mit.edu/6.102/www/sp24/classes/02-testing/"  target="_blank" rel="noopener"
+    >教材</a>介绍的分区选择测试用例的测试策略, 对最终的Expression.differentiate和Expression.simplify进行了&quot;黑盒&quot;测试(由于equals的定义, 我必须知道表达式字符串会被解析为什么样的AST, 才能知道预期表达式是什么样的), 所以一定程度上依赖了我的实现.</p>
+<h2 id="summary">Summary
+</h2><p>作为第一次尝试实现递归数据类型, 也是第一次尝试解析用户输入, 目前结果至少是能计算&rdquo;+&ldquo;与&rdquo;*&ldquo;的求导了(尽管求导出的表达式有些繁琐), 工具箱里又多了两个小技能, 又多掌握了一些软件工程的开发模式, 感觉还是非常nice的.</p>
+<h2 id="question">Question
+</h2><p>Q1: 设计函数的spec时, 我到底应不应该@throws, 既然我的测试用例只保证符合spec的输入能产生符合spec的输出, 不符合spec的值的输出时未定义的, 那我要不要让无效输入快速失败, 如果我选择了快速失败, 并注明了@throws, 那我是否应该测试@throws.</p>
+<p>Q2: <a id="Q2"></a>如果我想让输出的表达式更简洁一些(比如$x<em>x</em>x$求导之后是$3<em>x</em>x$, 而不是$((1.0 * (x * x)) + (x * ((1.0 * x) + (x * 1.0))))$), 我该怎么设计, 这里主要的争议就是输出的表达式该简洁到什么程度, 我很难判断, 我只能写一些启发性的代码, 试图让表达式不那么繁琐, 但是我不知道是否有数学原理告诉我最简洁的表达式形式应该是什么样的.</p>
+<p>Q3: equals应该如何实现, 项目概述给的定义如下:</p>
+<p><strong>Structural equality</strong> defines two expressions to be equal if:</p>
+<ol>
+<li>the expressions contain the same variables, numbers, and operators;</li>
+<li>those variables, numbers, and operators are in the same order, read left-to-right;</li>
+<li>and they are grouped in the same way.</li>
+</ol>
+<p>我不知道为什么要这样定义, 也许是因为这样能保证两个相等的表达式的AST也是相同的, 我觉得数学上相等的表达式就应该相等, 但是与上一个问题类似, 我连化简一个表达式都尚不能解决, 又如何判断数学上是否相等.</p>
+<h2 id="references">References
+</h2><p>项目概述: <a class="link" href="https://ocw.mit.edu/ans7870/6/6.005/s16/psets/ps3/"  target="_blank" rel="noopener"
+    >https://ocw.mit.edu/ans7870/6/6.005/s16/psets/ps3/</a></p>
+<p>antlr参考: <a class="link" href="https://web.mit.edu/6.005/www/sp16/classes/18-parser-generators/"  target="_blank" rel="noopener"
+    >https://web.mit.edu/6.005/www/sp16/classes/18-parser-generators/</a></p>
+<p>我的实现: <a class="link" href="https://github.com/Spiceses/Expressivo"  target="_blank" rel="noopener"
+    >https://github.com/Spiceses/Expressivo</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/gitlet/">
+        
+        
+            <div class="article-image">
+                <img src="/p/gitlet/branching-illustration.34917b969193928c586023f0b971ae38_hu7879785382112171167.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post gitlet"
+                        
+                        data-hash="md5-NJF7lpGTkoxYYCPwuXGuOA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">gitlet</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 Spices
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.582cafcf2f7737b683e4166c12a5eb75f353e2a8c8169edef8d9c0991b77c0ca.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

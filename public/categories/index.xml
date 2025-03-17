@@ -7,7 +7,71 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Spices</copyright>
-        <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 10 Mar 2025 23:21:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Java</title>
+        <link>http://localhost:1313/categories/java/</link>
+        <pubDate>Mon, 10 Mar 2025 23:21:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/java/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>VCS</title>
+        <link>http://localhost:1313/categories/vcs/</link>
+        <pubDate>Mon, 10 Mar 2025 23:21:00 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/vcs/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Cryptography</title>
+        <link>http://localhost:1313/categories/cryptography/</link>
+        <pubDate>Tue, 04 Mar 2025 11:51:53 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/cryptography/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>File Sharing</title>
+        <link>http://localhost:1313/categories/file-sharing/</link>
+        <pubDate>Tue, 04 Mar 2025 11:51:53 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/file-sharing/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Go</title>
+        <link>http://localhost:1313/categories/go/</link>
+        <pubDate>Tue, 04 Mar 2025 11:51:53 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/go/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Recursive Data Type</title>
+        <link>http://localhost:1313/categories/recursive-data-type/</link>
+        <pubDate>Tue, 04 Mar 2025 11:51:53 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/recursive-data-type/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Regular Expression</title>
+        <link>http://localhost:1313/categories/regular-expression/</link>
+        <pubDate>Tue, 04 Mar 2025 11:51:53 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/regular-expression/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Security</title>
+        <link>http://localhost:1313/categories/security/</link>
+        <pubDate>Tue, 04 Mar 2025 11:51:53 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/security/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Test</title>
         <link>http://localhost:1313/categories/test/</link>
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>

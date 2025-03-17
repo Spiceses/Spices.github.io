@@ -3,12 +3,13 @@
 date = '2025-03-04T11:51:53+08:00'
 draft = false
 title = 'A Secure File Sharing System'
+description = "加密文件共享系统"
+image = "banner.jpg"
+categories = ["cryptography", "file sharing", "security", "go"]
 
 +++
 
 
-
-# A Secure File Sharing System
 
 这是一个有关如何在不安全的Cloud Database上与他人共享文件的项目, 在项目中我们将利用密码学知识设计合理的文件加密方案, 最终使得即使云数据库不安全, 我们也能安全地存储并与他人分享文件!
 
