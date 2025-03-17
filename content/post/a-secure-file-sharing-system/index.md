@@ -11,7 +11,9 @@ categories = ["cryptography", "file sharing", "security", "go"]
 
 
 
-这是一个有关如何在不安全的Cloud Database上与他人共享文件的项目, 在项目中我们将利用密码学知识设计合理的文件加密方案, 最终使得即使云数据库不安全, 我们也能安全地存储并与他人分享文件!
+这是一个有关如何在不安全的Cloud Database上与他人共享文件的项目, 我的实现放在[这里](https://github.com/Spiceses/A-Secure-File-Sharing-System).
+
+在项目中,我们将利用密码学知识设计合理的文件加密方案, 最终使得即使云数据库不安全, 我们也能安全地存储并与他人分享文件!(目前仅有后端实现)
 
  ## Key technology
 
