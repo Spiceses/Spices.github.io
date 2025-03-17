@@ -14,15 +14,13 @@ image = "branching-illustration.png"
 
 ## 介绍
 
-本项目参考[cs61b](https://sp21.datastructur.es/index.html)的[proj2](https://sp21.datastructur.es/materials/proj/proj2/proj2)的设计思路
+本项目参考 `cs61b` 的[proj2](https://sp21.datastructur.es/materials/proj/proj2/proj2), 我的实现放在[这里](https://github.com/Spiceses/gitlet). 在本项目中，我实现了一个[版本控制系统](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)，它模仿了流行系统Git的一些基本功能。然而，我的版本较小且更简单，因此将其命名为Gitlet.
 
-在本项目中，我实现了一个[版本控制系统](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)，它模仿了流行系统Git的一些基本功能。然而，我的版本较小且更简单，因此将其命名为Gitlet.
-
-我的实现放在[这里](https://github.com/Spiceses/gitlet), 这个项目是在大二下学期学习数据结构(cs61b)时完成的, 由于当时尚未系统学习过软件工程, 所以并没有特别注重代码的安全性, 可读性与可扩展性(甚至类与方法的spec都没有), 希望读者谅解.
+这个项目是在大二下学期学习数据结构(cs61b)时完成的, 由于当时尚未系统学习过软件工程, 所以并没有特别注重代码的安全性, 可读性与可扩展性(甚至类与方法的spec都没有), 希望读者谅解.
 
 技术栈: java, VCS(版本控制系统), 持久化存储
 
-PS: 突然想到, 我实现gitlet时, 也使用了git维护代码版本, 这就是世界上只有一个人需要手写汇编代码实现编译器的原理吗
+PS: 实现gitlet时, 也使用了git维护代码版本, 这就是世界上只有一个人需要手写汇编代码实现编译器的原理吗
 
 ## 抽象
 
@@ -444,7 +442,7 @@ a0da1e
 
 ## Questions
 
-**Q1**: 突然想到, 我写这个项目的记录, 应该用第一人称好, 还是用第二人称呢?
+**Q1**: 我写这个项目的记录, 应该用第一人称好, 还是用第二人称呢?
 
 用第二人称感觉像指导手册, 但是我只是记录一下我的实现过程, 希望看到的人更了解我的经历, 最终决定用第一人称吧
 
