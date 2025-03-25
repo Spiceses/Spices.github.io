@@ -282,48 +282,6 @@ random.stuff
 2. 读取commit id, 找到对应文件
 3. 读取.gitlet/branch, 找到对应的branch name引用的commit id, 加载所有文件到CWD, 移动HEAD, 清空缓冲区
 
-为了更好的用户体验, gitlet还提供缩写操作哦.
-
-一个[提交id]，如前所述，是一个十六进制数字。真实的Git的一个方便功能是可以使用唯一的前缀来缩写提交。例如，可以将
-
-```
-a0da1ea5a15ab613bf9961fd86f010cf74c7ee48
-```
-
-缩写为
-
-```
-a0da1e
-```
-
-前提是（很可能）没有其他对象的SHA-1标识符也以相同的六位数字开头。
-
-观察了git的.git/objects目录, 发现Git将哈希值分为两部分来组织目录：
-
-- **前2位字符**：作为子目录名称。
-- **后38位字符**：作为文件名称。
-
-例如，一个对象的哈希值为 `6f1e3e5fa74c5d1f7c53c1f99b94a1a3c3b1e5d5`，它会存储在：
-
-```
-.git/objects/6f/1e3e5fa74c5d1f7c53c1f99b94a1a3c3b1e5d5
-```
-
-示例：
-
-```
-.git/objects/
-├── 00/
-├── 6f/
-│   └── 1e3e5fa74c5d1f7c53c1f99b94a1a3c3b1e5d5
-├── 9a/
-│   └── 2b8e23a5f8d4e6c4ea1f21a3c3b5d8f9ef3e4c
-└── info/
-└── pack/
-```
-
-发现这实际上是一种hashmap, 只不过是通过文件系统来实现的, 每个子目录可以看作一个bucket, 我们的gitlet也仿照此实现即可
-
 ### branch
 
 使用方式：`java gitlet.Main branch [分支名]`
